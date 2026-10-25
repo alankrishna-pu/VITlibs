@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 24px; font-family: 'Times New Roman', Times, serif; background: #ffffff; color: #0f172a; }
+  .diagram-container { border: 2px solid #1e3a8a; border-radius: 8px; padding: 20px; background: #f8fafc; max-width: 900px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .diagram-title { text-align: center; font-size: 16px; font-weight: bold; color: #1e3a8a; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .tier-row { display: flex; justify-content: space-between; align-items: stretch; margin-bottom: 14px; gap: 14px; }
+  .tier-box { flex: 1; border: 1.5px solid #3b82f6; border-radius: 6px; background: #ffffff; padding: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .tier-header { font-weight: bold; font-size: 13px; color: #1e40af; border-bottom: 1px solid #bfdbfe; padding-bottom: 4px; margin-bottom: 8px; text-align: center; }
+  .tier-items { font-size: 11px; line-height: 1.5; color: #334155; }
+  .tier-items li { margin-bottom: 3px; }
+  .arrow-down { text-align: center; font-size: 16px; font-weight: bold; color: #2563eb; margin: -6px 0 6px 0; }
+  .dsa-highlight { background: #eff6ff; border: 2px solid #2563eb; }
+  .dsa-header { color: #1e3a8a; font-weight: bold; font-size: 14px; text-align: center; border-bottom: 1.5px solid #3b82f6; padding-bottom: 6px; margin-bottom: 10px; }
+  .dsa-grid { display: flex; gap: 10px; }
+  .dsa-subbox { flex: 1; border: 1px solid #93c5fd; background: #ffffff; border-radius: 4px; padding: 8px; font-size: 11px; }
+  .dsa-subtitle { font-weight: bold; color: #1d4ed8; margin-bottom: 4px; font-size: 11.5px; }
+</style>
+</head>
+<body>
+<div class="diagram-container">
+  <div class="diagram-title">Figure 1: Architectural Block Diagram of SideSeat Library Seat Allocation System</div>
+  
+  <!-- Presentation Tier -->
+  <div class="tier-box">
+    <div class="tier-header">1. PRESENTATION LAYER (Client-Side Web Browser)</div>
+    <div style="display: flex; gap: 10px;">
+      <div style="flex: 1; font-size: 11px; background: #f1f5f9; padding: 8px; border-radius: 4px;">
+        <strong>Interactive Architectural Map</strong><br>
+        • HTML5 Floor Blueprint Grid<br>
+        • Color-coded Seats (Green/Red/Grey)<br>
+        • Side/Corner Seats Quick Filters
+      </div>
+      <div style="flex: 1; font-size: 11px; background: #f1f5f9; padding: 8px; border-radius: 4px;">
+        <strong>Role-Based Authentication UI</strong><br>
+        • Student Login (Reg No. Session)<br>
+        • Librarian Staff Controls (Admin)<br>
+        • Immediate First-Open Gate
+      </div>
+      <div style="flex: 1; font-size: 11px; background: #f1f5f9; padding: 8px; border-radius: 4px;">
+        <strong>State & Recommendation Engine</strong><br>
+        • Reactive State Observer Pattern<br>
+        • Alternative Seat Ranking Heuristic<br>
+        • Async REST Fetch via API Layer
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">▼ HTTP / REST JSON Network Boundary (TCP Port 8080) ▼</div>
+
+  <!-- Server Tier -->
+  <div class="tier-box">
+    <div class="tier-header">2. APPLICATION & COMMUNICATIONS SERVER (Embedded C HTTP Server)</div>
+    <div style="display: flex; gap: 10px;">
+      <div style="flex: 1; font-size: 11px; background: #f8fafc; padding: 8px; border-radius: 4px; border: 1px dashed #cbd5e1;">
+        <strong>POSIX TCP Socket Engine</strong><br>
+        • <code>socket()</code>, <code>bind()</code>, <code>listen()</code>, <code>accept()</code><br>
+        • Non-blocking <code>select()</code> I/O multiplexing<br>
+        • Multi-packet <code>Content-Length</code> stream receiver
+      </div>
+      <div style="flex: 1; font-size: 11px; background: #f8fafc; padding: 8px; border-radius: 4px; border: 1px dashed #cbd5e1;">
+        <strong>HTTP Request Router & Parser</strong><br>
+        • Method extraction (GET, POST, PATCH)<br>
+        • Path & Query Parameter parsing<br>
+        • CORS Headers & Static Asset MIME dispatch
+      </div>
+      <div style="flex: 1; font-size: 11px; background: #f8fafc; padding: 8px; border-radius: 4px; border: 1px dashed #cbd5e1;">
+        <strong>JSON Serialization Subsystem</strong><br>
+        • <code>extract_json_field()</code> parser<br>
+        • Seat and Floor JSON builders<br>
+        • Error payloads & HTTP status formatting
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">▼ Internal Function Calls (Zero-Overhead Memory Access) ▼</div>
+
+  <!-- DSA Core Tier -->
+  <div class="tier-box dsa-highlight">
+    <div class="dsa-header">3. CORE DATA STRUCTURES & ALGORITHMS (Authoritative In-Memory Engine)</div>
+    <div class="dsa-grid">
+      <div class="dsa-subbox">
+        <div class="dsa-subtitle">Authoritative Array</div>
+        • <code>Seat g_seats[256]</code><br>
+        • Contiguous memory allocation<br>
+        • Cache-friendly sequential traversals<br>
+        • Total Capacity: 256 seats
+      </div>
+      <div class="dsa-subbox">
+        <div class="dsa-subtitle">DJB2 Hash Table (O(1))</div>
+        • <code>hash = ((hash << 5) + hash) + c</code><br>
+        • Modulo 101 prime bucket capacity<br>
+        • Case-insensitive alphanumeric keys<br>
+        • Instant exact seat lookup by ID
+      </div>
+      <div class="dsa-subbox">
+        <div class="dsa-subtitle">Separate Chaining</div>
+        • <code>SeatNode* buckets[101]</code><br>
+        • Singly-linked overflow chains<br>
+        • Resolves hash collisions dynamically<br>
+        • 34 collisions across 112 loaded seats
+      </div>
+      <div class="dsa-subbox">
+        <div class="dsa-subtitle">Linear Search Filter (O(N))</div>
+        • Multi-attribute predicate matching<br>
+        • Filters by Floor, Category, Status<br>
+        • <code>seat_find_matches()</code> engine<br>
+        • Deterministic O(N) worst-case time
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">▼ File I/O Synchronization (Atomic Persistence) ▼</div>
+
+  <!-- Persistence Tier -->
+  <div class="tier-box">
+    <div class="tier-header">4. PERSISTENCE & STORAGE TIER (CSV Storage Engine)</div>
+    <div style="display: flex; gap: 10px; font-size: 11px;">
+      <div style="flex: 2; background: #f1f5f9; padding: 8px; border-radius: 4px;">
+        <strong>Persistent CSV Store: <code>data/seats.csv</code></strong><br>
+        • Header schema: <code>id,floor_id,category,zone,status,grid_row,grid_col</code><br>
+        • 112 individual library seats mapped across 5 floors (Ground through 4th Floor)
+      </div>
+      <div style="flex: 1; background: #f1f5f9; padding: 8px; border-radius: 4px;">
+        <strong>Atomic Write Protection</strong><br>
+        • In-memory update reflected instantly<br>
+        • Full CSV rewrite on status modification<br>
+        • Crash recovery & data integrity
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

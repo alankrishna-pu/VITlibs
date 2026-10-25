@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; background: #0f172a; padding: 24px; font-family: 'Menlo', 'Courier New', monospace; font-size: 13px; color: #f8fafc; }
+  .term { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+  .term-header { display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #334155; padding-bottom: 12px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red { background: #ef4444; } .dot-yellow { background: #f59e0b; } .dot-green { background: #10b981; }
+  .title { color: #94a3b8; font-size: 12px; margin-left: 10px; font-weight: bold; }
+  .pass { color: #34d399; font-weight: bold; }
+  .header { color: #60a5fa; font-weight: bold; }
+  .cmd { color: #fbbf24; }
+  .divider { color: #64748b; }
+</style>
+</head>
+<body>
+<div class="term">
+  <div class="term-header">
+    <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
+    <span class="title">Terminal: C Backend Compilation & 24 Automated DSA Tests (make test)</span>
+  </div>
+  <div><span class="cmd">$ make test</span></div>
+  <div style="color: #94a3b8; margin: 4px 0 12px 0;">clang -Wall -Wextra -O2 -std=c11 -Ibackend backend/seat.c tests/test_backend.c -o bin/test_backend</div>
+  <div class="divider">===================================================</div>
+  <div class="header">      SideSeat C Backend & DSA Automated Tests     </div>
+  <div class="divider">===================================================</div>
+  <br>
+  <div class="header">--- Test Suite 1: Hash Table Basic Operations ---</div>
+  <div>  <span class="pass">[PASS]</span> Hash table insertion succeeds for new seats</div>
+  <div>  <span class="pass">[PASS]</span> Lookup finds existing seat TEST-S01</div>
+  <div>  <span class="pass">[PASS]</span> Lookup is case-insensitive (test-s01 == TEST-S01)</div>
+  <div>  <span class="pass">[PASS]</span> Lookup returns NULL for nonexistent seat ID</div>
+  <div>  <span class="pass">[PASS]</span> Hash table free resets count to 0</div>
+  <br>
+  <div class="header">--- Test Suite 2: Hash Collision Handling (Separate Chaining) ---</div>
+  <div>  <span class="pass">[PASS]</span> Lookup succeeds for first chained item</div>
+  <div>  <span class="pass">[PASS]</span> Lookup succeeds for second chained item</div>
+  <br>
+  <div class="header">--- Test Suite 3: Linear Search Filters (O(n)) ---</div>
+  <div>  <span class="pass">[PASS]</span> Sample seats loaded for linear search test</div>
+  <div>  <span class="pass">[PASS]</span> Linear search finds SIDE seats</div>
+  <div>  <span class="pass">[PASS]</span> All results from category filter match 'SIDE'</div>
+  <div>  <span class="pass">[PASS]</span> Linear search finds available seats on GROUND floor</div>
+  <div>  <span class="pass">[PASS]</span> All results match both GROUND floor and AVAILABLE status</div>
+  <div>  <span class="pass">[PASS]</span> Linear search handles combined floor and category filters</div>
+  <br>
+  <div class="header">--- Test Suite 4: Status Update & Persistence ---</div>
+  <div>  <span class="pass">[PASS]</span> Test CSV initialized with sample seats</div>
+  <div>  <span class="pass">[PASS]</span> Status update returns success code 0</div>
+  <div>  <span class="pass">[PASS]</span> In-memory status matches updated status</div>
+  <div>  <span class="pass">[PASS]</span> Seats successfully reloaded from persistent CSV</div>
+  <div>  <span class="pass">[PASS]</span> Updated seat found after simulated restart</div>
+  <div>  <span class="pass">[PASS]</span> Persistent status matches new status across restart</div>
+  <div>  <span class="pass">[PASS]</span> Updating status of nonexistent seat returns -1 error</div>
+  <br>
+  <div class="header">--- Test Suite 5: Statistics Consistency ---</div>
+  <div>  <span class="pass">[PASS]</span> Total seats in stats matches g_seat_count</div>
+  <div>  <span class="pass">[PASS]</span> Sum of available, occupied, and unavailable equals total seats</div>
+  <div>  <span class="pass">[PASS]</span> Ground floor has non-zero total seats</div>
+  <div>  <span class="pass">[PASS]</span> Ground floor status sum matches ground floor total</div>
+  <br>
+  <div class="divider">===================================================</div>
+  <div style="color: #34d399; font-weight: bold; font-size: 14px;">Test Summary: 24 / 24 assertions passed (100% SUCCESS)</div>
+  <div class="divider">===================================================</div>
+</div>
+</body>
+</html>

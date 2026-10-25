@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 10px; background: #ffffff; font-family: 'Times New Roman', serif; display: flex; align-items: center; justify-content: center; }
+  .header-wrap { display: flex; align-items: center; justify-content: center; gap: 36px; padding: 10px; }
+  .logo-text { text-align: center; }
+  .vit-main { font-size: 52px; font-weight: 900; color: #1e3a8a; letter-spacing: 2px; line-height: 1; margin: 0; font-family: 'Times New Roman', Georgia, serif; }
+  .vit-sup { font-size: 20px; vertical-align: super; font-weight: normal; }
+  .vit-sub { font-size: 19px; font-weight: bold; color: #1e293b; margin-top: 6px; letter-spacing: 0.5px; }
+  .vit-deemed { font-size: 11px; color: #475569; font-style: italic; margin-top: 4px; }
+  .seal-svg { width: 95px; height: 95px; }
+</style>
+</head>
+<body>
+<div class="header-wrap">
+  <svg class="seal-svg" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="46" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="3,2"/>
+    <circle cx="50" cy="50" r="42" fill="#f8fafc" stroke="#1e40af" stroke-width="2"/>
+    <!-- Outer Text Ring -->
+    <path id="curve" d="M 18,50 A 32,32 0 1,1 82,50" fill="none"/>
+    <text font-size="6.5" font-family="'Times New Roman', serif" font-weight="bold" fill="#1e3a8a">
+      <textPath href="#curve" startOffset="50%" text-anchor="middle">
+        VELLORE INSTITUTE OF TECH
+      </textPath>
+    </text>
+    <!-- Center Emblem Graphics -->
+    <rect x="36" y="38" width="28" height="22" fill="#e2e8f0" stroke="#1e40af" stroke-width="1.2"/>
+    <polygon points="32,38 50,26 68,38" fill="#1e3a8a"/>
+    <rect x="42" y="44" width="5" height="16" fill="#1e40af"/>
+    <rect x="53" y="44" width="5" height="16" fill="#1e40af"/>
+    <text x="50" y="36" font-size="8" font-family="'Times New Roman', serif" font-weight="bold" fill="#ffffff" text-anchor="middle">VIT</text>
+    <path d="M 30,64 Q 50,70 70,64 L 68,69 Q 50,74 32,69 Z" fill="#2563eb"/>
+    <text x="50" y="68" font-size="4.2" font-family="sans-serif" font-weight="bold" fill="#ffffff" text-anchor="middle">A++ NAAC</text>
+    <path d="M 24,78 Q 50,86 76,78" fill="none" stroke="#1e3a8a" stroke-width="1.5"/>
+  </svg>
+
+  <div class="logo-text">
+    <div class="vit-main">VIT<span class="vit-sup">®</span></div>
+    <div class="vit-sub">Vellore Institute of Technology</div>
+    <div class="vit-deemed">(Deemed to be University under section 3 of UGC Act, 1956)</div>
+  </div>
+</div>
+</body>
+</html>

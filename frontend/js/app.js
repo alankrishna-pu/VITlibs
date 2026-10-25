@@ -1046,6 +1046,40 @@ document.addEventListener('DOMContentLoaded', async () => {
         // 6. Render initial map and empty details panel
         FloorMap.render();
         SeatDetails.render();
+
+        // 7. Handle URL parameters for demo mode, tabs, and specific seats
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('demo') === 'student') {
+            State.login({
+                id: '21BCE1024',
+                username: '21BCE1024',
+                name: 'Arjun Sharma',
+                email: 'arjun.sharma2021@vitstudent.ac.in',
+                role: 'STUDENT'
+            });
+            closeLoginModal();
+        } else if (urlParams.get('demo') === 'admin') {
+            State.login({
+                id: 'LIB-8842',
+                username: 'LIB-8842',
+                name: 'Dr. K. Ramanathan (Librarian)',
+                email: 'librarian@vit.ac.in',
+                role: 'ADMIN'
+            });
+            closeLoginModal();
+        }
+
+        if (urlParams.get('tab')) {
+            switchView(urlParams.get('tab'));
+        }
+
+        if (urlParams.get('seat')) {
+            const seatId = urlParams.get('seat');
+            const target = State.get().currentSeats.find(s => s.id === seatId);
+            if (target) {
+                State.setSelectedSeat(target);
+            }
+        }
     }
 
     init();

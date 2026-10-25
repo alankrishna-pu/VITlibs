@@ -1,0 +1,113 @@
+id,floor_id,category,zone,status,grid_row,grid_col
+G-S01,GROUND,SIDE,West Wall Window Counters,AVAILABLE,2,1
+G-S02,GROUND,SIDE,West Wall Window Counters,OCCUPIED,3,1
+G-S03,GROUND,SIDE,West Wall Window Counters,AVAILABLE,4,1
+G-S04,GROUND,SIDE,East Wall Garden View,AVAILABLE,2,8
+G-S05,GROUND,SIDE,East Wall Garden View,OCCUPIED,3,8
+G-S06,GROUND,SIDE,East Wall Garden View,UNAVAILABLE,4,8
+G-C01,GROUND,CORNER,North-West Quiet Corner,OCCUPIED,1,1
+G-C02,GROUND,CORNER,North-East Scenic Corner,OCCUPIED,1,8
+G-C03,GROUND,CORNER,South-West Entrance Corner,UNAVAILABLE,6,1
+G-C04,GROUND,CORNER,South-East Archive Corner,AVAILABLE,6,8
+G-I01,GROUND,INDIVIDUAL,Central Individual Carrels,AVAILABLE,2,3
+G-I02,GROUND,INDIVIDUAL,Central Individual Carrels,OCCUPIED,2,4
+G-I03,GROUND,INDIVIDUAL,Central Individual Carrels,AVAILABLE,3,3
+G-I04,GROUND,INDIVIDUAL,Central Individual Carrels,AVAILABLE,3,4
+G-I05,GROUND,INDIVIDUAL,Central Individual Carrels,OCCUPIED,4,3
+G-I06,GROUND,INDIVIDUAL,Central Individual Carrels,AVAILABLE,4,4
+G-M01,GROUND,MIDDLE,Central Reading Row,AVAILABLE,5,3
+G-M02,GROUND,MIDDLE,Central Reading Row,OCCUPIED,5,4
+G-M03,GROUND,MIDDLE,Central Reading Row,AVAILABLE,5,5
+G-M04,GROUND,MIDDLE,Central Reading Row,AVAILABLE,5,6
+G-T01,GROUND,GROUP,North Collaborative Table,OCCUPIED,2,6
+G-T02,GROUND,GROUP,North Collaborative Table,OCCUPIED,3,6
+G-T03,GROUND,GROUP,South Project Table,AVAILABLE,5,1
+G-T04,GROUND,GROUP,South Project Table,AVAILABLE,5,8
+F1-S01,F1,SIDE,Digital Media Perimeter West,AVAILABLE,2,1
+F1-S02,F1,SIDE,Digital Media Perimeter West,OCCUPIED,3,1
+F1-S03,F1,SIDE,Digital Media Perimeter West,AVAILABLE,4,1
+F1-S04,F1,SIDE,E-Resource East Wall,AVAILABLE,2,8
+F1-S05,F1,SIDE,E-Resource East Wall,OCCUPIED,3,8
+F1-S06,F1,SIDE,E-Resource East Wall,AVAILABLE,4,8
+F1-C01,F1,CORNER,North-West Computing Pod,OCCUPIED,1,1
+F1-C02,F1,CORNER,North-East Multimedia Pod,AVAILABLE,1,8
+F1-C03,F1,CORNER,South-West Audio-Visual Pod,AVAILABLE,6,1
+F1-C04,F1,CORNER,South-East Developer Pod,OCCUPIED,6,8
+F1-I01,F1,INDIVIDUAL,Individual PC Workstations,AVAILABLE,2,3
+F1-I02,F1,INDIVIDUAL,Individual PC Workstations,AVAILABLE,2,4
+F1-I03,F1,INDIVIDUAL,Individual PC Workstations,OCCUPIED,3,3
+F1-I04,F1,INDIVIDUAL,Individual PC Workstations,AVAILABLE,3,4
+F1-I05,F1,INDIVIDUAL,Individual PC Workstations,AVAILABLE,4,3
+F1-I06,F1,INDIVIDUAL,Individual PC Workstations,UNAVAILABLE,4,4
+F1-M01,F1,MIDDLE,Laptop Island Center,AVAILABLE,3,6
+F1-M02,F1,MIDDLE,Laptop Island Center,OCCUPIED,4,6
+F1-M03,F1,MIDDLE,Laptop Island Center,AVAILABLE,5,3
+F1-M04,F1,MIDDLE,Laptop Island Center,AVAILABLE,5,4
+F1-T01,F1,GROUP,Software Dev Table A,OCCUPIED,2,6
+F1-T02,F1,GROUP,Software Dev Table B,AVAILABLE,5,6
+F2-S01,F2,SIDE,Periodicals West Window,AVAILABLE,2,1
+F2-S02,F2,SIDE,Periodicals West Window,AVAILABLE,3,1
+F2-S03,F2,SIDE,Periodicals West Window,OCCUPIED,4,1
+F2-S04,F2,SIDE,Journal Reading Counter East,AVAILABLE,2,8
+F2-S05,F2,SIDE,Journal Reading Counter East,AVAILABLE,3,8
+F2-S06,F2,SIDE,Journal Reading Counter East,OCCUPIED,4,8
+F2-C01,F2,CORNER,North-West Magazine Corner,AVAILABLE,1,1
+F2-C02,F2,CORNER,North-East Bound Volume Corner,UNAVAILABLE,1,8
+F2-C03,F2,CORNER,South-West Newspaper Corner,AVAILABLE,6,1
+F2-C04,F2,CORNER,South-East Archives Corner,AVAILABLE,6,8
+F2-I01,F2,INDIVIDUAL,Quiet Stacks Carrels,OCCUPIED,2,3
+F2-I02,F2,INDIVIDUAL,Quiet Stacks Carrels,AVAILABLE,2,4
+F2-I03,F2,INDIVIDUAL,Quiet Stacks Carrels,AVAILABLE,3,3
+F2-I04,F2,INDIVIDUAL,Quiet Stacks Carrels,AVAILABLE,3,4
+F2-I05,F2,INDIVIDUAL,Quiet Stacks Carrels,OCCUPIED,4,3
+F2-I06,F2,INDIVIDUAL,Quiet Stacks Carrels,AVAILABLE,4,4
+F2-M01,F2,MIDDLE,Reference Reading Table Row,AVAILABLE,5,3
+F2-M02,F2,MIDDLE,Reference Reading Table Row,AVAILABLE,5,4
+F2-M03,F2,MIDDLE,Reference Reading Table Row,OCCUPIED,5,5
+F2-M04,F2,MIDDLE,Reference Reading Table Row,AVAILABLE,5,6
+F2-T01,F2,GROUP,Reference Group Desk A,OCCUPIED,2,6
+F2-T02,F2,GROUP,Reference Group Desk B,AVAILABLE,3,6
+F3-S01,F3,SIDE,Silent Study Wall West,AVAILABLE,2,1
+F3-S02,F3,SIDE,Silent Study Wall West,AVAILABLE,3,1
+F3-S03,F3,SIDE,Silent Study Wall West,OCCUPIED,4,1
+F3-S04,F3,SIDE,Deep Focus East Glass Wall,AVAILABLE,2,8
+F3-S05,F3,SIDE,Deep Focus East Glass Wall,OCCUPIED,3,8
+F3-S06,F3,SIDE,Deep Focus East Glass Wall,AVAILABLE,4,8
+F3-C01,F3,CORNER,North-West Solitude Pod,AVAILABLE,1,1
+F3-C02,F3,CORNER,North-East Solitude Pod,AVAILABLE,1,8
+F3-C03,F3,CORNER,South-West Meditative Pod,OCCUPIED,6,1
+F3-C04,F3,CORNER,South-East Deep Work Pod,AVAILABLE,6,8
+F3-I01,F3,INDIVIDUAL,High-Wall Privacy Carrels,AVAILABLE,2,3
+F3-I02,F3,INDIVIDUAL,High-Wall Privacy Carrels,OCCUPIED,2,4
+F3-I03,F3,INDIVIDUAL,High-Wall Privacy Carrels,OCCUPIED,2,5
+F3-I04,F3,INDIVIDUAL,High-Wall Privacy Carrels,AVAILABLE,3,3
+F3-I05,F3,INDIVIDUAL,High-Wall Privacy Carrels,AVAILABLE,3,4
+F3-I06,F3,INDIVIDUAL,High-Wall Privacy Carrels,OCCUPIED,3,5
+F3-I07,F3,INDIVIDUAL,High-Wall Privacy Carrels,AVAILABLE,4,3
+F3-I08,F3,INDIVIDUAL,High-Wall Privacy Carrels,AVAILABLE,4,4
+F3-M01,F3,MIDDLE,Silent Study Center Desk,AVAILABLE,5,3
+F3-M02,F3,MIDDLE,Silent Study Center Desk,AVAILABLE,5,4
+F3-M03,F3,MIDDLE,Silent Study Center Desk,OCCUPIED,5,5
+F3-T01,F3,GROUP,Silent Discussion Island,AVAILABLE,3,7
+F4-S01,F4,SIDE,Research Scholar West Wall,AVAILABLE,2,1
+F4-S02,F4,SIDE,Research Scholar West Wall,OCCUPIED,3,1
+F4-S03,F4,SIDE,Research Scholar West Wall,AVAILABLE,4,1
+F4-S04,F4,SIDE,Thesis Desk East Wall,AVAILABLE,2,8
+F4-S05,F4,SIDE,Thesis Desk East Wall,AVAILABLE,3,8
+F4-S06,F4,SIDE,Thesis Desk East Wall,OCCUPIED,4,8
+F4-C01,F4,CORNER,North-West Scholar Suite,AVAILABLE,1,1
+F4-C02,F4,CORNER,North-East Scholar Suite,OCCUPIED,1,8
+F4-C03,F4,CORNER,South-West Thesis Pod,AVAILABLE,6,1
+F4-C04,F4,CORNER,South-East Patent Room Corner,AVAILABLE,6,8
+F4-I01,F4,INDIVIDUAL,Doctoral Study Booths,AVAILABLE,2,3
+F4-I02,F4,INDIVIDUAL,Doctoral Study Booths,AVAILABLE,2,4
+F4-I03,F4,INDIVIDUAL,Doctoral Study Booths,OCCUPIED,3,3
+F4-I04,F4,INDIVIDUAL,Doctoral Study Booths,AVAILABLE,3,4
+F4-I05,F4,INDIVIDUAL,Doctoral Study Booths,AVAILABLE,4,3
+F4-I06,F4,INDIVIDUAL,Doctoral Study Booths,UNAVAILABLE,4,4
+F4-M01,F4,MIDDLE,Microfilm Reading Row,AVAILABLE,5,3
+F4-M02,F4,MIDDLE,Microfilm Reading Row,AVAILABLE,5,4
+F4-M03,F4,MIDDLE,Microfilm Reading Row,AVAILABLE,5,5
+F4-T01,F4,GROUP,Research Colloquium Table,AVAILABLE,2,6
+F4-T02,F4,GROUP,Research Colloquium Table,OCCUPIED,3,6
+F4-T03,F4,GROUP,Faculty-Scholar Desk,AVAILABLE,5,7

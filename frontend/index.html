@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SideSeat – VIT Library Individual & Side Seat Finder. Locate available individual study seats, side window counters, and corner pods in real-time.">
+    <title>SideSeat – VIT Library Individual Seat Finder</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- ==============================================
+             VERTICAL DARK NAVY SIDEBAR
+             ============================================== -->
+        <aside class="app-sidebar" aria-label="Main Navigation">
+            <div class="sidebar-brand">
+                <div class="brand-logo-icon">
+                    <!-- Modern Chair / SideSeat SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 4h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+                        <path d="M5 14v6"/>
+                        <path d="M19 14v6"/>
+                        <path d="M9 14v6"/>
+                        <path d="M15 14v6"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">SideSeat</span>
+                    <span class="brand-sub">VIT Library Seat Finder</span>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="sidebar-nav">
+                <a href="#map" class="nav-item active" data-tab="map" id="nav-link-map">
+                    <span class="nav-icon">🗺️</span>
+                    <span class="nav-label">Library Map</span>
+                </a>
+                <a href="#floors" class="nav-item" data-tab="floors" id="nav-link-floors">
+                    <span class="nav-icon">🏢</span>
+                    <span class="nav-label">All Floors</span>
+                </a>
+                <a href="#favorites" class="nav-item" data-tab="favorites" id="nav-link-favorites">
+                    <span class="nav-icon">⭐</span>
+                    <span class="nav-label">Favorites</span>
+                </a>
+                <a href="#recent" class="nav-item" data-tab="recent" id="nav-link-recent">
+                    <span class="nav-icon">🕒</span>
+                    <span class="nav-label">Recent Seats</span>
+                </a>
+                <a href="#stats" class="nav-item" data-tab="stats" id="nav-link-stats">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-label">Statistics</span>
+                </a>
+            </nav>
+
+            <!-- User Session & Quick Switch -->
+            <div class="sidebar-user-panel" id="sidebar-user-panel">
+                <div class="user-panel-info">
+                    <div class="avatar-circle" id="sidebar-user-avatar">AS</div>
+                    <div class="user-details">
+                        <span class="user-name-text" id="sidebar-user-name">Arjun Sharma</span>
+                        <span class="user-id-text" id="sidebar-user-id">21BCE1024</span>
+                    </div>
+                </div>
+                <div class="user-panel-actions">
+                    <button class="btn btn-xs btn-outline" id="btn-sidebar-login">Switch Account</button>
+                    <button class="btn btn-xs btn-ghost" id="btn-sidebar-logout" title="Sign Out">Sign Out</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ==============================================
+             MAIN DASHBOARD CONTENT
+             ============================================== -->
+        <div class="app-main">
+            <!-- Header Bar -->
+            <header class="app-header">
+                <!-- Search Seat ID -->
+                <div class="header-search-wrap">
+                    <div class="search-input-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text"
+                               id="seat-search-input"
+                               placeholder="Search exact seat ID (e.g. G-S01, F1-C02) or keywords..."
+                               autocomplete="off"
+                               aria-label="Search Seat by ID">
+                        <button class="btn-clear-search" id="btn-clear-search" aria-label="Clear Search" style="display: none;">✕</button>
+                    </div>
+                </div>
+
+                <!-- Header Actions & Profile -->
+                <div class="header-actions">
+                    <!-- Backend Connection Status Pill -->
+                    <div class="status-pill pill-demo" id="backend-status-pill" title="Checking C Backend Status...">
+                        <span class="status-dot"></span>
+                        <span>Checking Backend...</span>
+                    </div>
+
+                    <button class="btn-icon-retry" id="btn-retry-connection" title="Retry C Backend Connection" aria-label="Retry Backend Connection">
+                        🔄
+                    </button>
+
+                    <!-- User Profile / Login Button Container -->
+                    <div id="header-auth-container">
+                        <!-- Rendered dynamically by app.js -->
+                    </div>
+                </div>
+            </header>
+
+            <!-- Prototype Banner Notice -->
+            <div class="prototype-banner">
+                <span class="banner-badge">PROTOTYPE NOTICE</span>
+                <span class="banner-text">
+                    Illustrative sample layouts for VIT Library individual seat locator demo. Layouts are simulated and do not claim to represent verified architectural blueprints.
+                </span>
+            </div>
+
+            <!-- ==============================================
+                 VIEW 1: LIBRARY MAP (DEFAULT VIEW)
+                 ============================================== -->
+            <section class="view-panel active-view" id="view-map" data-view="map">
+                <!-- Floor Selector Tabs -->
+                <div class="floor-selector-bar">
+                    <div class="floor-selector-title">
+                        <span class="bar-title">SELECT FLOOR:</span>
+                    </div>
+                    <div class="floor-tabs" id="floor-selector-tabs" role="tablist" aria-label="Library Floors">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+
+                <!-- Seat Filters & Quick Actions Bar -->
+                <div class="filter-controls-bar">
+                    <div class="filter-group">
+                        <label for="filter-category" class="filter-label">Category:</label>
+                        <select id="filter-category" class="select-input">
+                            <option value="">All Categories</option>
+                            <option value="SIDE">🪟 Side Seats (Wall/Window)</option>
+                            <option value="CORNER">📐 Corner Pods</option>
+                            <option value="INDIVIDUAL">💻 Individual Desks</option>
+                            <option value="MIDDLE">🪑 Middle Seating</option>
+                            <option value="GROUP">👥 Group Tables</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="filter-available-only">
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Available Seats Only</span>
+                        </label>
+                    </div>
+
+                    <!-- Quick Action Buttons -->
+                    <div class="quick-actions-group">
+                        <button class="btn btn-quick" id="btn-quick-side">
+                            <span>🎯 Find Side Seats</span>
+                        </button>
+                        <button class="btn btn-quick" id="btn-quick-corner">
+                            <span>📐 Find Corner Seats</span>
+                        </button>
+                        <button class="btn btn-outline" id="btn-reset-filters">
+                            <span>🔄 Reset Filters</span>
+                        </button>
+                    </div>
+
+                    <!-- Filter Counter -->
+                    <div class="filter-counter-wrap">
+                        <span class="seats-count-badge" id="seats-count-badge">Loading seats...</span>
+                    </div>
+                </div>
+
+                <!-- Floor Map & Seat Details Split Grid -->
+                <div class="map-layout-grid">
+                    <!-- Left: Interactive Top-down Architectural Floor Map -->
+                    <div class="map-section" id="floor-map-container">
+                        <!-- Rendered by floor-map.js -->
+                    </div>
+
+                    <!-- Right: Seat Details & Alternatives Panel -->
+                    <div class="details-section" id="seat-details-panel">
+                        <!-- Rendered by seat-details.js -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============================================
+                 VIEW 2: ALL FLOORS
+                 ============================================== -->
+            <section class="view-panel" id="view-all-floors" data-view="floors">
+                <!-- Rendered by app.js -->
+            </section>
+
+            <!-- ==============================================
+                 VIEW 3: FAVORITES
+                 ============================================== -->
+            <section class="view-panel" id="view-favorites" data-view="favorites">
+                <!-- Rendered by app.js -->
+            </section>
+
+            <!-- ==============================================
+                 VIEW 4: RECENT SEATS
+                 ============================================== -->
+            <section class="view-panel" id="view-recent" data-view="recent">
+                <!-- Rendered by app.js -->
+            </section>
+
+            <!-- ==============================================
+                 VIEW 5: STATISTICS & DSA ANALYTICS
+                 ============================================== -->
+            <section class="view-panel" id="view-stats" data-view="stats">
+                <!-- Rendered by app.js -->
+            </section>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         LOGIN & AUTHENTICATION MODAL
+         ============================================== -->
+    <div class="modal-backdrop" id="login-modal-backdrop" style="display: none;">
+        <script>
+            try {
+                if (!localStorage.getItem('sideseat_auth_user_v1')) {
+                    document.getElementById('login-modal-backdrop').style.display = 'flex';
+                }
+            } catch (e) {}
+        </script>
+        <div class="modal-dialog login-modal" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span class="modal-logo-icon">🪑</span>
+                    <div>
+                        <h3 id="login-modal-title">Sign In to SideSeat</h3>
+                        <p class="modal-subtitle">VIT Library Individual Seat Finder</p>
+                    </div>
+                </div>
+                <button class="btn-modal-close" id="btn-close-login-modal" aria-label="Close Login Modal">✕</button>
+            </div>
+
+            <div class="login-role-tabs" role="tablist">
+                <button type="button" class="login-tab active" id="tab-login-student" role="tab" data-role="STUDENT">
+                    🎓 Student Login
+                </button>
+                <button type="button" class="login-tab" id="tab-login-librarian" role="tab" data-role="ADMIN">
+                    📚 Librarian Login
+                </button>
+            </div>
+
+            <!-- One-click Demo Credentials -->
+            <div class="quick-demo-login-box">
+                <span class="quick-demo-label">1-CLICK DEMO CREDENTIALS:</span>
+                <div class="quick-demo-buttons">
+                    <button type="button" class="btn btn-demo-chip" id="btn-quick-fill-student">
+                        ⚡ Demo Student (21BCE1024)
+                    </button>
+                    <button type="button" class="btn btn-demo-chip" id="btn-quick-fill-admin">
+                        ⚡ Demo Librarian (LIB-8842)
+                    </button>
+                </div>
+            </div>
+
+            <form id="login-form" class="login-form">
+                <div id="login-error-alert" class="login-alert-error" style="display: none;"></div>
+
+                <div class="form-group">
+                    <label for="login-username" id="label-login-username">Registration Number:</label>
+                    <input type="text" id="login-username" required placeholder="e.g. 21BCE1024" value="21BCE1024" autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" required placeholder="Enter password" value="student123" autocomplete="current-password">
+                </div>
+
+                <div class="login-info-note" id="login-role-note">
+                    ℹ️ Student Account: Search seats, view availability, and save favorites.
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" id="btn-cancel-login">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="btn-submit-login">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Element -->
+    <div id="sideseat-toast" class="sideseat-toast" role="status" aria-live="polite"></div>
+
+    <!-- Application Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/floor-map.js"></script>
+    <script src="js/seat-details.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
